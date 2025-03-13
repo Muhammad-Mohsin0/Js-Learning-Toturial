@@ -31,8 +31,34 @@ const myFunction= function(){
     console.log("Helloo World")
 }
 
-console.log(typeof bigNumber);
+// console.log(typeof bigNumber);
 
 
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++
+// Memory ( Stack and Heap)
+
+// Stack (Primitive) , Heap (Non-Primitive)
+
+//Stack,  make a copy nd not change the exact value
+let myName= "Mohsin"
+let fullName=myName
+fullName="Muhammad Mohsin"
+console.log(myName);
+console.log(fullName);
+
+// Heap , Make reference and change exact value
+
+let userOne ={
+    email: "mosi@google.com",
+    Address: "islamabad"
+}
+let userTwo=userOne
+
+userTwo.email="mosiKhan@yahoo.com"
+console.log(userOne.email);
+console.log(userTwo.email);
