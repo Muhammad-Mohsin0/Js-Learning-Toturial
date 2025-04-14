@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div id="wrapper">
+        <h1>Number Guessing Game</h1>
+        <p>Try and Guess Random number between 1 to 100</p>
+        <p>You have the 10 attempts to guess the right number.</p>
+    </br>
+    <form class="form">
+        <label for="guessField" id="guess">Guess a Number</label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
+    </form>
+    <div class="resultParas">
+        <p>Previous guesses: <span class="guesses"></span></p>
+        <p>Guesses Remaining: <span class="lastResult"></span></p>
+        <p class="lowOrhi"></p>
+    </div>
+    </div>
+    
+</body>
+<script src="LogicBuild.js"></script>
+</html>
