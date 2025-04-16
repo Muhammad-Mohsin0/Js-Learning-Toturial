@@ -23,8 +23,37 @@
     //     alert('Owl image clicked!');
     // };
 
-    document.getElementById('owl').addEventListener('click',function(){
-        alert('Owl image clicked again!');
-    });
+    // attachEvent() is deprecated in modern browsers, use addEventListener instead. that was used in interExplorer
+    // jQuery .on() is a method that attaches an event handler function for one or more events to the selected elements.
+
+    // type, timeStamp, defaultPrevented
+    // target, toElement, srcElement, curentTarget
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //    console.log("clicked inside the ul");
+    // },false);  // bydefault it is "FALSE", that mean it is bubbling phase if we used "TRUE" then it is capturing phase
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //    console.log("clicked Owl image");
+    //      e.stopPropagation(); // it will stop the event from bubbling up to the parent elements.
+    // },false);
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //    console.log("clicked Google link");
+    //      e.preventDefault(); // it will prevent the default action of the event.
+    //      e.stopPropagation(); // it will stop the event from bubbling up to the parent elements.
+    // },false);
+    
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log((e.target.tagName))
+        if (e.target.tagName === 'IMG'){ 
+            console.log(e.target.id);
+            
+            let removeIt= e.target.parentNode
+            removeIt.remove()
+        }
+         //removeIt.parentNode.removeChild(removeIt)
+    })
 </script>
 </html>
