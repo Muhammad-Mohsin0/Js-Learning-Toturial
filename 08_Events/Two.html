@@ -13,6 +13,15 @@
     const SayMohsin=function(){
         console.log("Mohsin")
     }
-    setTimeout(SayMohsin, 2000)
+const changeText=function(){
+    document.querySelector('h1').innerHTML="Mohsin learning JS"
+}
+
+const changeMe = setTimeout(SayMohsin, 2000)
+document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe)
+    console.log("Stop")
+})
+setTimeout(changeText, 3000)
 </script>
 </html>
