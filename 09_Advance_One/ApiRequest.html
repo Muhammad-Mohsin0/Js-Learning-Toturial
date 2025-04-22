@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Card</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: wheat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .card {
+            display: none;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #333;
+            text-align: center;
+            margin-top: 20px;
+            width: 300px;
+        }
+        .avatar {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: teal;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="loadGitHubProfile()">Show GitHub Profile</button>
+
+    <div class="card" id="profileCard">
+        <img id="avatar" class="avatar" src="" alt="GitHub Avatar">
+        <h2>Followers: <span id="followerCount">0</span></h2>
+    </div>
+
+    <script>
+        function loadGitHubProfile() {
+            const requestUrl = "https://api.github.com/users/Muhammad-Mohsin0";
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET", requestUrl);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(this.responseText);
+                    
+                    // Set data in DOM
+                    document.getElementById("avatar").src = data.avatar_url;
+                    document.getElementById("followerCount").textContent = data.followers;
+                    document.getElementById("profileCard").style.display = "block";
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+
+</body>
+</html>
