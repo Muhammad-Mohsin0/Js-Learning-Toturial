@@ -1,0 +1,2 @@
+const myArray=[]
+DebugPrint(myArray)
